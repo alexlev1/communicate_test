@@ -1,11 +1,9 @@
-require_relative "test"
-require_relative "print_result"
+require_relative "lib/test"
+require_relative "lib/print_result"
 
 name = ARGV[0]
 
-if name == nil
-  name = "Аноним"
-end
+name = "Аноним" if name == nil
 
 test = Test.new
 result = ResultPrinter.new

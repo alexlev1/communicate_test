@@ -1,12 +1,12 @@
 class Test
+  attr_reader :sum_answers
+
   def initialize
     current_path = File.dirname(__FILE__)
-    file_path = current_path + '/data/questions.txt'
+    file_path = current_path + "/../data/questions.txt"
 
     if File.exist?(file_path)
-      file = File.new(file_path, 'r:UTF-8')
-      questions = file.readlines
-      file.close
+      questions = File.readlines(file_path)
       @questions = questions
     else
       abort "Файл с вопросами не найден"
@@ -24,10 +24,9 @@ class Test
       user_input = STDIN.gets.chomp.downcase
     end
 
-    if user_input == "да"
-      @sum_answers += 2
-    elsif user_input == "иногда"
-      @sum_answers += 1
+    case user_input
+      when "да" then @sum_answers += 2
+      when "иногда" then @sum_answers += 1
     end
   end
 
@@ -38,9 +37,5 @@ class Test
       enter_your_answers!
       @count_questions -= 1
     end
-  end
-
-  def sum_answers
-    @sum_answers
   end
 end
