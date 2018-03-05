@@ -6,8 +6,6 @@ class ResultPrinter
     if File.exist?(file_path)
       answers = File.readlines(file_path)
       @results = answers
-    else
-      abort "Файл с ответами не найден"
     end
   end
 

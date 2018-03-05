@@ -8,8 +8,6 @@ class Test
     if File.exist?(file_path)
       questions = File.readlines(file_path)
       @questions = questions
-    else
-      abort "Файл с вопросами не найден"
     end
 
     @count_questions = @questions.size
