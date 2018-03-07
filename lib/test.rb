@@ -5,9 +5,10 @@ class Test
     current_path = File.dirname(__FILE__)
     file_path = current_path + "/../data/questions.txt"
 
-    if File.exist?(file_path)
-      questions = File.readlines(file_path)
-      @questions = questions
+    begin
+      @questions = File.readlines(file_path)
+    rescue SystemCallError => error
+      puts "Ошибка! Нет файла с вопросами"
     end
 
     @count_questions = @questions.size

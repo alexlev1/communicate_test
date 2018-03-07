@@ -6,7 +6,7 @@ name = ARGV[0]
 name = "Аноним" if name == nil
 
 test = Test.new
-result = ResultPrinter.new
+result = PrintResult.new
 
 puts "Здравствуйте, #{name}! Вашему вниманию предлагается несколько"
 puts "простых вопросов. Отвечайте: «да», «нет» или «иногда»."

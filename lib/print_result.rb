@@ -1,11 +1,12 @@
-class ResultPrinter
+class PrintResult
   def initialize
     current_path = File.dirname(__FILE__)
     file_path = current_path + "/../data/answers.txt"
 
-    if File.exist?(file_path)
-      answers = File.readlines(file_path)
-      @results = answers
+    begin
+      @results = File.readlines(file_path)
+    rescue SystemCallError => error
+      puts "Ошибка! Нет файла с ответами"
     end
   end
 
