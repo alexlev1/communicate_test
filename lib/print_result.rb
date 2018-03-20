@@ -7,6 +7,7 @@ class PrintResult
       @results = File.readlines(file_path)
     rescue SystemCallError => error
       puts "Ошибка! Нет файла с ответами"
+      abort error.message
     end
   end
 

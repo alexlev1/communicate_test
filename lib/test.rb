@@ -9,6 +9,7 @@ class Test
       @questions = File.readlines(file_path)
     rescue SystemCallError => error
       puts "Ошибка! Нет файла с вопросами"
+      abort error.message
     end
 
     @count_questions = @questions.size
