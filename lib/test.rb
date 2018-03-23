@@ -4,14 +4,7 @@ class Test
   def initialize
     current_path = File.dirname(__FILE__)
     file_path = current_path + "/../data/questions.txt"
-
-    begin
-      @questions = File.readlines(file_path)
-    rescue SystemCallError => error
-      puts "Ошибка! Нет файла с вопросами"
-      abort error.message
-    end
-
+    @questions = File.readlines(file_path)
     @count_questions = @questions.size
     @sum_answers = 0
   end

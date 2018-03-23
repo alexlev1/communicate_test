@@ -2,13 +2,7 @@ class PrintResult
   def initialize
     current_path = File.dirname(__FILE__)
     file_path = current_path + "/../data/answers.txt"
-
-    begin
-      @results = File.readlines(file_path)
-    rescue SystemCallError => error
-      puts "Ошибка! Нет файла с ответами"
-      abort error.message
-    end
+    @results = File.readlines(file_path)
   end
 
   def print_result(test)
