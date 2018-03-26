@@ -1,9 +1,7 @@
 class Test
   attr_reader :sum_answers
 
-  def initialize
-    current_path = File.dirname(__FILE__)
-    file_path = current_path + "/../data/questions.txt"
+  def initialize(file_path)
     @questions = File.readlines(file_path)
     @count_questions = @questions.size
     @sum_answers = 0

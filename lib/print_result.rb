@@ -1,7 +1,5 @@
 class PrintResult
-  def initialize
-    current_path = File.dirname(__FILE__)
-    file_path = current_path + "/../data/answers.txt"
+  def initialize(file_path)
     @results = File.readlines(file_path)
   end
 
